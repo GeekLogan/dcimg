@@ -379,6 +379,9 @@ file_name=input_file.dcimg>
         elif self._file_header['format_version'] == 0x1000000:
             self.fmt_version = self.FMT_NEW
             sess_dtype = self.NEW_SESSION_HEADER_DTYPE
+        elif self._file_header['format_version'] == 0x2000000:
+            self.fmt_version = self.FMT_NEW
+            sess_dtype = self.NEW_SESSION_HEADER_DTYPE
         else:
             raise ValueError('Invalid DCIMG format version: 0x{:04x}'.format(
                 self._file_header['format_version'][0]))
